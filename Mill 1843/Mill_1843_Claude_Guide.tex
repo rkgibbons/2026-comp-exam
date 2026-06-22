@@ -1,0 +1,134 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{fontenc}
+
+\title{\textbf{Mill 1843 Claude Guide}\\
+\large Mill, John Stuart. \textit{A System of Logic, Ratiocinative and Inductive}.\\
+London: John W. Parker, 1843.\\[0.5em]
+\normalsize \textit{Coverage: Book III, Chapter VIII --- ``Of the Four Methods of Experimental Inquiry''}}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+%--------------------------------------------------
+\section{Central Claims}
+%--------------------------------------------------
+
+\begin{itemize}[leftmargin=*, itemsep=4pt]
+    \item Causal inquiry in the empirical sciences proceeds through four formal canons---the \textbf{Method of Agreement}, the \textbf{Method of Difference}, the \textbf{Joint Method of Agreement and Difference}, and the \textbf{Method of Concomitant Variations}---as well as a fifth, the \textbf{Method of Residues}. Each is a systematized procedure for eliminating non-causes and identifying the circumstances that stand in a necessary or sufficient relation to a phenomenon.
+    \item The methods rest on two foundational axioms of induction: (1) the \textbf{axiom of agreement}---if two or more instances of the phenomenon have only one antecedent circumstance in common, that circumstance is the cause or part of the cause; and (2) the \textbf{axiom of difference}---if an instance in which the phenomenon occurs and an instance in which it does not occur differ in only one antecedent circumstance, that circumstance is the cause, or an indispensable part of it.
+    \item None of the methods is logically demonstrative on its own; each presupposes the \textbf{law of universal causation} (that every event has a cause) and the completeness of enumeration of relevant circumstances. Their conclusions are therefore always provisional and revisable in light of new instances.
+    \item The \textbf{Method of Difference} is Mill's preferred and most powerful canon for establishing causation because it directly tests a single variation against a controlled background---approximating the logic of a controlled experiment.
+    \item The \textbf{Method of Agreement} is weaker because it cannot rule out plurality of causes: different antecedents in different cases may separately produce the same effect, so agreement on one factor is not decisive.
+    \item The \textbf{Method of Concomitant Variations} is the appropriate tool when the cause and effect are not present/absent but vary by degree, and when experimental manipulation is impossible---making it particularly important for social and political inquiry where controlled experiments are unavailable.
+    \item Mill explicitly acknowledges the limitations of applying these methods to complex social phenomena where (a) instances are few and never perfectly comparable, (b) multiple causes operate simultaneously, and (c) controlled experimentation is ethically or practically impossible---anticipating the central methodological tensions of the social sciences.
+\end{itemize}
+
+%--------------------------------------------------
+\section{The Five Methods: Formal Statement and Logic}
+%--------------------------------------------------
+
+\subsection{Method of Agreement}
+
+\begin{itemize}[leftmargin=*, itemsep=4pt]
+    \item \textbf{Canon}: ``If two or more instances of the phenomenon under investigation have only one circumstance in common, the circumstance in which alone all the instances agree, is the cause (or effect) of the given phenomenon.''
+    \item \textbf{Logic}: Suppose cases $A_1, A_2, A_3$ each produce phenomenon $E$. If $A_1$ is accompanied by circumstances $\{a, b, c\}$, $A_2$ by $\{a, d, e\}$, and $A_3$ by $\{a, f, g\}$---and $a$ is the only constant antecedent---then $a$ is the probable cause of $E$.
+    \item \textbf{Eliminative logic}: The method works by \emph{elimination}: any circumstance absent in even one positive instance of $E$ cannot be the cause. What survives elimination is the candidate cause.
+    \item \textbf{Weakness---plurality of causes}: The method cannot rule out that different causes produce $E$ in different cases. The circumstance $a$ may be present in all cases not because it is \emph{the} cause but because it is a correlate of multiple independent causes each of which produces $E$ under different circumstances. This makes Agreement insufficient for establishing unique causation.
+    \item \textbf{Best use case}: Useful when investigating a phenomenon that appears across very different contexts and researchers seek the common thread; common in epidemiology and historical comparative politics.
+    \item \textbf{Illustrative example}: Seeking the cause of a disease outbreak across geographically dispersed populations with different diets, climates, and social conditions; if the only common factor is a shared water source, Agreement points to the water as the probable cause.
+\end{itemize}
+
+\subsection{Method of Difference}
+
+\begin{itemize}[leftmargin=*, itemsep=4pt]
+    \item \textbf{Canon}: ``If an instance in which the phenomenon under investigation occurs, and an instance in which it does not occur, have every circumstance save one in common, that one occurring only in the former; the circumstance in which alone the two instances differ, is the effect, or cause, or a necessary part of the cause, of the phenomenon.''
+    \item \textbf{Logic}: Compare a positive instance $\{a, b, c\} \to E$ with a negative instance $\{b, c\} \to \text{not-}E$. Since $a$ is the only difference, $a$ caused $E$ (or is an indispensable part of the cause).
+    \item \textbf{Why this is the strongest method}: Method of Difference establishes that a factor is \emph{necessary} and \emph{sufficient} in the comparison---removing $a$ removes $E$, adding $a$ adds $E$, with all else held constant. This is the logic of the \textbf{controlled experiment}.
+    \item \textbf{The indispensable part caveat}: Mill notes that the method identifies $a$ as ``the cause, or a necessary part of the cause.'' It is possible that $a$ alone does not produce $E$ but acts as an indispensable component of a complex cause $\{a + b\}$---the method cannot distinguish these without further inquiry.
+    \item \textbf{Practical challenge}: True ceteris paribus comparisons are very rare outside laboratory settings. In social and historical inquiry, no two cases differ in only one respect, making the method difficult to apply directly.
+    \item \textbf{Illustrative example}: A laboratory experiment in which one plant receives sunlight and another does not, with soil, water, and temperature held constant; if the sunlit plant grows and the other does not, sunlight is identified as the cause of growth.
+\end{itemize}
+
+\subsection{Joint Method of Agreement and Difference}
+
+\begin{itemize}[leftmargin=*, itemsep=4pt]
+    \item \textbf{Canon}: ``If two or more instances in which the phenomenon occurs have only one circumstance in common, while two or more instances in which it does not occur have nothing in common save the absence of that circumstance; the circumstance in which alone the two sets of instances differ, is the effect, or cause, or a necessary part of the cause, of the phenomenon.''
+    \item \textbf{Logic}: Combine Agreement across positive cases with Agreement across negative cases. The factor present in all positive and absent in all negative cases is the probable cause.
+    \item \textbf{Relationship to Method of Difference}: The Joint Method is often called an \textbf{Indirect Method of Difference} because it approximates the logic of Difference without requiring two cases that differ only in one respect---instead it uses two sets of multiple cases. It is therefore more feasible in social inquiry than the direct Method of Difference.
+    \item \textbf{Remaining weakness}: It still cannot fully overcome the problem of plurality of causes: the common circumstance in the positive set may merely correlate with multiple independent causes rather than being the sole cause of $E$ in all cases.
+    \item \textbf{Best use case}: Comparative historical analysis (e.g., Mill's own discussions of political phenomena); John Stuart Mill's comparative method in political inquiry is typically this method rather than the pure Method of Difference, since controlled experiments on societies are impossible.
+    \item \textbf{Illustrative example}: Comparing several countries that experienced democratic consolidation (positive cases) against several that did not (negative cases): if the only consistently present factor in the former set and consistently absent factor in the latter is independent judiciary, the method points to judicial independence as the cause.
+\end{itemize}
+
+\subsection{Method of Residues}
+
+\begin{itemize}[leftmargin=*, itemsep=4pt]
+    \item \textbf{Canon}: ``Subduct from any phenomenon such part as is known by previous inductions to be the effect of certain antecedents, and the residue of the phenomenon is the effect of the remaining antecedents.''
+    \item \textbf{Logic}: Where a complex phenomenon $E_1 + E_2 + E_3$ has antecedents $A + B + C$, and prior inductions have established that $A$ causes $E_1$ and $B$ causes $E_2$, then by subtraction $C$ must cause $E_3$.
+    \item \textbf{Distinctive character}: Unlike the other methods, Method of Residues is not a procedure for gathering new observations but for extracting new causal conclusions from \emph{existing} knowledge through deductive subtraction. It is therefore partially dependent on prior inductive results.
+    \item \textbf{Role in scientific discovery}: Mill notes that this method has historically been important in the physical sciences---for example, the discovery of the planet Neptune, which was inferred from the unexplained residual perturbations in Uranus's orbit after known gravitational causes were subtracted.
+    \item \textbf{Limitations}: The method requires that prior causal attributions are secure and that the enumeration of causes is complete; an unknown cause unaccounted for in the subtraction will produce a spurious residue attributed to the wrong antecedent.
+    \item \textbf{Less applicable in social inquiry}: Because prior causal knowledge in social science is less precise and complete than in physical science, the Method of Residues is rarely applied with confidence in social and political inquiry.
+\end{itemize}
+
+\subsection{Method of Concomitant Variations}
+
+\begin{itemize}[leftmargin=*, itemsep=4pt]
+    \item \textbf{Canon}: ``Whatever phenomenon varies in any manner whenever another phenomenon varies in some particular manner, is either a cause or an effect of that phenomenon, or is connected with it through some fact of causation.''
+    \item \textbf{Logic}: If as $A$ increases, $E$ increases (or decreases) in a consistent manner across observations, there is a causal or mediating relationship between $A$ and $E$, even if $A$ and $E$ can never be observed fully absent or present.
+    \item \textbf{Key advantage}: This method applies where the phenomenon cannot take a binary present/absent form---e.g., temperature, economic output, levels of political participation---and where experiments that fully eliminate a cause are impossible. It is therefore \textbf{the most applicable method to quantitative social science}.
+    \item \textbf{The correlation-causation caveat}: Mill notes that concomitant variation alone does not establish which of $A$ or $E$ is the cause and which the effect, nor does it rule out a common cause $C$ producing variation in both $A$ and $E$ simultaneously. Additional theoretical reasoning or time-ordering is required to establish causal direction.
+    \item \textbf{Limits of the method}: Concomitant variation holds only within a range; beyond the range of observed variation, the relationship may break down. Mill cautions that the method reveals causal connection but not necessarily the complete form of the causal law.
+    \item \textbf{Modern resonance}: Concomitant Variations is the methodological ancestor of regression analysis and correlational inference in quantitative social science. The modern debates about identification, confounding, and causal inference in observational data directly extend Mill's worry about distinguishing genuine causation from spurious co-variation.
+    \item \textbf{Illustrative example}: Observing that as urbanization rates increase across countries, so do literacy rates and democratic participation---the consistent co-variation points to a causal or mediating connection, though it does not by itself settle the causal direction.
+\end{itemize}
+
+%--------------------------------------------------
+\section{Overarching Methodological Principles}
+%--------------------------------------------------
+
+\begin{itemize}[leftmargin=*, itemsep=4pt]
+    \item \textbf{Eliminative induction}: All five methods share a common eliminative logic: they work by systematically ruling out candidate causes that fail to survive the test of presence/absence or co-variation, leaving the surviving candidate as the probable cause. This is distinct from enumerative induction (which simply counts positive instances) and reflects Mill's conviction that causal inquiry requires contrast, not merely accumulation.
+    \item \textbf{Law of universal causation as foundation}: The methods presuppose that every event has a cause---without this assumption, eliminating candidates for one phenomenon would not license the inference that the surviving candidate is the cause. Mill defends this law as itself the highest-level inductive generalization established by millennia of human experience.
+    \item \textbf{Plurality of causes as the central enemy}: Plurality of causes---the possibility that the same effect can be produced by different causes in different instances---is the primary source of error in causal inference and the primary reason the Method of Agreement is weaker than Method of Difference. Mill devotes considerable attention to this problem as a standing threat to inductive conclusions.
+    \item \textbf{Intermixture of effects}: When multiple causes operate simultaneously, their effects ``intermix''---the observed outcome is the product of all operating causes, not any single one. Disentangling intermixed effects requires additional analytical steps (Method of Residues, or deductive analysis of known mechanisms) beyond direct observation.
+    \item \textbf{The deductive-inductive interplay}: Mill argues that in complex domains (political, social, moral), purely inductive methods are insufficient because instances are too few and too heterogeneous. The \textbf{deductive method}---deriving predictions from known causal laws and then checking them against observations---is often the only viable approach. The experimental methods are most valuable either in simple domains or as checks on deductive conclusions.
+    \item \textbf{The social sciences as a limiting case}: Mill uses the chapter and surrounding discussion to establish that the social sciences face an epistemic predicament: the phenomena are complex, experiments are impossible, instances are few, and causes are multiple and intermixed. This does not make social science impossible, but it means its conclusions are probabilistic, conditional, and far more tentative than those of the physical sciences.
+\end{itemize}
+
+%--------------------------------------------------
+\section{Methodological Limitations and Self-Critique}
+%--------------------------------------------------
+
+\begin{itemize}[leftmargin=*, itemsep=4pt]
+    \item \textbf{The problem of incomplete enumeration}: Each method requires that all causally relevant circumstances be identified and included in the comparison. If a relevant circumstance is omitted---because it is unknown, unmeasured, or assumed constant---the method will deliver a spurious conclusion. Mill acknowledges this as a fundamental and ineliminable limitation.
+    \item \textbf{The two-case problem in Method of Difference}: The purest application of Method of Difference requires only two cases differing in one respect---but in practice this is almost never achievable outside controlled experiments, because real-world cases are complex and never perfectly matched. Mill recognized that his own method placed demands on empirical reality that reality rarely meets.
+    \item \textbf{Plurality of causes revisited}: In social inquiry, the same outcome (e.g., democratic collapse, economic crisis) may be produced by entirely different causal chains in different instances. A method designed to identify a single common cause across instances may therefore systematically misidentify causes in complex social phenomena.
+    \item \textbf{Asymmetry of cause and effect}: Mill notes but does not fully resolve the fact that the methods identify symmetric relationships (``A causes E, E causes A'') that require additional temporal or theoretical reasoning to establish causal direction. This is a precursor to modern debates about reverse causation and endogeneity.
+    \item \textbf{The problem of interacting causes}: When causes interact (i.e., the effect of $A$ on $E$ depends on the level of $B$), simple eliminative methods fail. Mill's framework largely assumes additive rather than interactive causal structures, which limits its applicability to phenomena governed by interaction effects.
+    \item \textbf{Not a logic of discovery but of testing}: Mill presents the methods as procedures for evaluating candidate causes, not for generating hypotheses. The creative step of proposing which circumstances might be causally relevant lies outside the formal methods and depends on the researcher's prior knowledge and theoretical orientation.
+\end{itemize}
+
+%--------------------------------------------------
+\section{Connections to Later Methodology}
+%--------------------------------------------------
+
+\begin{itemize}[leftmargin=*, itemsep=4pt]
+    \item \textbf{Comparative historical analysis}: The Joint Method of Agreement and Difference is the methodological ancestor of the \textbf{Most Similar Systems} and \textbf{Most Different Systems} designs in comparative politics (Przeworski and Teune 1970). Mill's canons provide the logical foundation for case-selection strategies in small-$n$ qualitative research.
+    \item \textbf{Regression and observational inference}: Method of Concomitant Variations anticipates modern regression analysis; the problem Mill identifies---distinguishing co-variation driven by common causes from genuine causation---is precisely the identification problem that occupies contemporary econometrics and causal inference.
+    \item \textbf{The Millian critique of comparative politics}: Mill himself was skeptical that comparative political analysis could reliably apply his methods because polities differ along too many dimensions simultaneously. This skepticism anticipates Lijphart's (1971) ``many variables, small N'' problem and has driven the development of process tracing, within-case inference, and natural experiments in political science.
+    \item \textbf{Causal graphs and counterfactuals}: The logic of Method of Difference is equivalent to the modern potential-outcomes framework: comparing the outcome when the treatment is present versus absent with all other factors held constant. Mill's counterfactual logic predates but anticipates Rubin's causal model and the DAG (directed acyclic graph) framework.
+    \item \textbf{John Stuart Mill's own comparative politics}: Mill applied his methods (primarily the Joint Method) to historical cases in \textit{Considerations on Representative Government} (1861) and related writings, making his epistemological framework directly relevant to his substantive political science---a connection that gives the methodological chapter practical purchase for comparative politics scholars.
+\end{itemize}
+
+\end{document}
