@@ -1,0 +1,59 @@
+{
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk (pdflatex)",
+      "tools": ["latexmk"]
+    },
+    {
+      "name": "pdflatex x2",
+      "tools": ["pdflatex", "pdflatex"]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-synctex=1",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-interaction=nonstopmode",
+        "-synctex=1",
+        "%DOC%"
+      ]
+    }
+  ],
+  "latex-workshop.latex.autoBuild.run": "onFileChange",
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux", "*.bbl", "*.blg", "*.idx", "*.ind", "*.lof",
+    "*.lot", "*.out", "*.toc", "*.acn", "*.acr", "*.alg",
+    "*.glg", "*.glo", "*.gls", "*.ist", "*.fls", "*.log",
+    "*.fdb_latexmk", "*.synctex.gz"
+  ],
+  "latex-workshop.latex.clean.subfolder.enabled": true,
+  "latex-workshop.view.pdf.viewer": "tab",
+
+  "latex-workshop.bibtex-format.tab": "2 spaces",
+  "latex-workshop.bibtex-format.sortby": ["key"],
+
+  "latex-workshop.intellisense.citation.backend": "bibtex",
+  "latex-workshop.intellisense.citation.label": "authorYear",
+
+  "editor.wordWrap": "on",
+  "files.associations": {
+    "*.tex": "latex"
+  },
+
+  "search.exclude": {
+    "**/*.pdf": true,
+    "**/*.synctex.gz": true
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Citation Dashboard: Watch",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "tools/citation_dashboard.py",
+        "--bib", "refs.bib",
+        "--watch",
+        "Exam Writing/main.tex"
+      ],
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "citation-dashboard"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Citation Dashboard: Snapshot",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "tools/citation_dashboard.py",
+        "--bib", "refs.bib",
+        "Exam Writing/main.tex"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "citation-dashboard"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
