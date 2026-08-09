@@ -22,3 +22,13 @@
 # R
 .Rhistory
 .RData
+
+# Compendium build artifacts (regenerate with tools/build_compendium.py)
+Compendium/*.aux
+Compendium/*.log
+Compendium/*.out
+Compendium/*.toc
+Compendium/*.fls
+Compendium/*.fdb_latexmk
+Compendium/*.synctex.gz
+Compendium/*.pdf
