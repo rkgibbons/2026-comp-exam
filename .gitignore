@@ -1,4 +1,7 @@
-# LaTeX build artifacts
+# LaTeX build artifacts — all aux output is confined to per-folder .build/
+# dirs by tools/build_all.py. The stray patterns below cover files produced
+# by editors (Overleaf, TeXShop, VS Code) that don't use the builder.
+.build/
 *.aux
 *.log
 *.out
@@ -16,19 +19,12 @@
 *.snm
 *.vrb
 
+# Generated compendium PDF (rebuild with tools/build_compendium.py --pdf)
+Compendium/*.pdf
+
 # macOS
 .DS_Store
 
 # R
 .Rhistory
 .RData
-
-# Compendium build artifacts (regenerate with tools/build_compendium.py)
-Compendium/*.aux
-Compendium/*.log
-Compendium/*.out
-Compendium/*.toc
-Compendium/*.fls
-Compendium/*.fdb_latexmk
-Compendium/*.synctex.gz
-Compendium/*.pdf
