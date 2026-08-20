@@ -3,7 +3,7 @@
 Compendium builder — stitches every reading's guide and notes into one PDF.
 
 Walks the repo for `*_Claude_Guide.tex` and `*_Notes.tex`, orders them
-alphabetically by reading, and emits `Compendium/compendium.tex` with each
+alphabetically by reading, and emits `Comprehensive Content/Compendium/compendium.tex` with each
 reading as a \\part and, beneath it, the Claude guide followed by the
 personal notes.
 
@@ -25,11 +25,14 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-OUT_DIR = REPO / "Compendium"
+OUT_DIR = REPO / "Comprehensive Content" / "Compendium"
 OUT_TEX = OUT_DIR / "compendium.tex"
 
 # Folders that hold no readings.
-SKIP_DIRS = {"tools", "Exam Writing", "Compendium", ".git", "__pycache__"}
+SKIP_DIRS = {
+    "tools", "Exam Writing", "Comprehensive Content", "Compendium",
+    ".git", "__pycache__",
+}
 
 BODY_RE = re.compile(r"\\begin\{document\}(.*)\\end\{document\}", re.DOTALL)
 TITLE_RE = re.compile(r"\\title\{(.*?)\n?\}\s*\n\s*\\author", re.DOTALL)
@@ -201,7 +204,7 @@ def main():
         print("compendium.tex is up to date")
         return 0
 
-    OUT_DIR.mkdir(exist_ok=True)
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
     OUT_TEX.write_text(text, encoding="utf-8")
     print(f"Wrote {OUT_TEX.relative_to(REPO)} — {len(readings)} readings")
     for warning in missing:

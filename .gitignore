@@ -20,7 +20,7 @@
 *.vrb
 
 # Generated compendium PDF (rebuild with tools/build_compendium.py --pdf)
-Compendium/*.pdf
+Comprehensive Content/Compendium/*.pdf
 
 # macOS
 .DS_Store

@@ -38,7 +38,7 @@ BUILD_DIR = ".build"
 
 # The compendium references images by repo-relative path, so unlike every
 # other file it must be compiled from the repo root rather than -cd.
-COMPENDIUM = REPO / "Compendium" / "compendium.tex"
+COMPENDIUM = REPO / "Comprehensive Content" / "Compendium" / "compendium.tex"
 
 AUX_SUFFIXES = (
     ".aux", ".log", ".out", ".toc", ".fls", ".fdb_latexmk",
