@@ -165,11 +165,11 @@ def build():
         if subtitle:
             chunks.append(f"\\begin{{center}}\n{subtitle}\n\\end{{center}}\n")
 
-        # Claude first, then mine.
+        # Claude first, then mine. The guides have since been removed from the
+        # repo, so their absence is normal and no longer worth warning about;
+        # the branch stays in case a guide is ever dropped back in.
         if guide:
             chunks.append(section_for(guide, reading_dir, "Claude Guide"))
-        else:
-            missing.append(f"{name}: no Claude guide")
         if notes:
             chunks.append(section_for(notes, reading_dir, "My Notes"))
         else:
