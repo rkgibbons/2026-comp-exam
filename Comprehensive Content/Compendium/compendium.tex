@@ -15,6 +15,12 @@
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 
+% Figures are referenced by repo-relative path, which resolves when this file
+% is compiled from the repo root (what tools/build_*.py do). An editor that
+% auto-builds it from its own folder would otherwise find no images at all, so
+% offer the way back up to the root as a second search path.
+\graphicspath{{./}{../../}}
+
 \hypersetup{
   colorlinks=true,
   linkcolor=[HTML]{1F4E79},
