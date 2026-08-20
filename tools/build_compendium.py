@@ -27,6 +27,7 @@ No dependencies beyond the standard library; `--pdf` shells out to latexmk.
 
 import argparse
 import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -322,13 +323,20 @@ def main():
         print(f"  warning: {warning}")
 
     if args.pdf:
-        # -cd so relative image paths resolve from the repo root, not Compendium/.
+        # Build into a private scratch dir rather than beside the .tex. The
+        # editor's LaTeX extension auto-builds compendium.tex whenever this
+        # script rewrites it, and two latexmk runs sharing an output directory
+        # trample each other's .aux/.toc — which silently yields a PDF with an
+        # empty table of contents. Only the finished PDF is copied back out.
+        aux = OUT_DIR / ".build"
+        aux.mkdir(parents=True, exist_ok=True)
+        # cwd=REPO so the repo-relative image paths inside resolve.
         proc = subprocess.run(
             [
                 "latexmk", "-pdf", "-interaction=nonstopmode",
                 "-halt-on-error", "-quiet",
-                f"-outdir={OUT_DIR}",
-                str(OUT_TEX),
+                f"-outdir={aux.relative_to(REPO)}",
+                str(OUT_TEX.relative_to(REPO)),
             ],
             cwd=REPO,
             capture_output=True,
@@ -338,7 +346,24 @@ def main():
             sys.stderr.write(proc.stdout[-3000:] + proc.stderr[-2000:])
             print("\nlatexmk failed — see log above")
             return proc.returncode
-        print(f"Built {(OUT_DIR / 'compendium.pdf').relative_to(REPO)}")
+
+        built = aux / "compendium.pdf"
+        if not built.exists():
+            print("latexmk reported success but produced no PDF")
+            return 1
+        shutil.copy2(built, OUT_DIR / "compendium.pdf")
+
+        # A table of contents that came out empty means the run raced with
+        # another build; say so rather than shipping a broken PDF silently.
+        toc = aux / "compendium.toc"
+        entries = toc.read_text(encoding="utf-8").count("contentsline") if toc.exists() else 0
+        if entries == 0:
+            print("warning: table of contents is empty — was another "
+                  "LaTeX build running at the same time?")
+        print(
+            f"Built {(OUT_DIR / 'compendium.pdf').relative_to(REPO)} "
+            f"({entries} contents entries)"
+        )
     return 0
 
 
