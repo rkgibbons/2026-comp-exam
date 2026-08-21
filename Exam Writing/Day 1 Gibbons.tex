@@ -1,0 +1,206 @@
+% =====================================================================
+%  DAY 1 — 2026 Comprehensive Exam
+%  Ryan Gibbons
+%
+%  HOW TO USE
+%    Write the Day 1 response in the body below.
+%    Build:  latexmk -pdf "Day 1 Gibbons.tex"
+%      or:   python3 tools/build_all.py "Day 1*"
+%
+%  CITATIONS — American Political Science Review style.
+%    \cite{key}            -> (Putnam 1993)          parenthetical
+%    \citeasnoun{key}      -> Putnam (1993)          narrative / in-text
+%    \citeyear{key}        -> 1993                   year alone
+%    \cite[45]{key}        -> (Putnam 1993, 45)     with page number
+%    \possessivecite{key}  -> Putnam's (1993)        possessive
+%    Multiple: \cite{a,b,c}
+%    Keys come from ../refs.bib. Nothing is cited yet — that is fine;
+%    the References section simply stays empty until you cite something.
+% =====================================================================
+
+
+% ---------------------------------------------------------------------
+%  SETTING 1 of 3 — FONT SIZE
+%  Change the option on the next line. Valid values: 10pt, 11pt, 12pt.
+% ---------------------------------------------------------------------
+\documentclass[12pt]{article}
+
+
+% ---------------------------------------------------------------------
+%  SETTING 2 of 3 — MARGINS
+%  One value applied to all four sides. Examples: 1in, 1.25in, 2.5cm.
+%  For uneven margins, replace the \geometry line further down.
+% ---------------------------------------------------------------------
+\newcommand{\MarginSize}{1in}
+
+% ---------------------------------------------------------------------
+%  SETTING 3 of 3 — LINE SPACING
+%  1.0 = single, 1.5 = one-and-a-half, 2.0 = double. Decimals are fine.
+% ---------------------------------------------------------------------
+\newcommand{\LineSpacing}{2.0}
+
+
+% ---------------------------------------------------------------------
+%  TITLE PAGE FIELDS — edit these four lines per response
+% ---------------------------------------------------------------------
+\newcommand{\PaperTitle}{Day 1}
+\newcommand{\PaperAuthor}{Ryan Gibbons}
+\newcommand{\PaperDate}{\today}
+\newcommand{\PaperSubtitle}{2026 Comprehensive Examination \\[0.3em] Day One}
+
+
+% =====================================================================
+%  PACKAGES
+% =====================================================================
+
+% --- Page layout, spacing, headers ---
+\usepackage[margin=\MarginSize]{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{titling}
+
+% --- Fonts and text ---
+% lmodern is Computer Modern redrawn as a scalable outline font: it looks the
+% same as the LaTeX default but, unlike the default, microtype can expand it
+% and PDF text search/copy works properly.
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}      % subtle spacing improvements
+\usepackage{csquotes}       % \enquote{...} for nested quotation marks
+\usepackage{soul}           % \hl{} highlight, \ul{} underline
+\usepackage{xcolor}
+\usepackage{url}
+
+% --- Mathematics ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathtools}      % \coloneqq, \DeclarePairedDelimiter, etc.
+\usepackage{bm}             % \bm{} bold math
+\usepackage{dsfont}         % \mathds{1} indicator function
+
+% --- Figures ---
+\usepackage{graphicx}
+\usepackage{float}          % [H] to pin a float exactly here
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{wrapfig}
+\usepackage{rotating}
+
+% --- Tables ---
+\usepackage{booktabs}       % \toprule \midrule \bottomrule
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{threeparttable}
+\usepackage{siunitx}        % \num{1234.5}, aligned numeric columns
+
+% --- Lists, code, diagrams ---
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, arrows.meta, calc, positioning, trees}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% --- Citations: APSR style (harvard.sty + apsr.bst, both in this folder) ---
+\usepackage[apsr]{harvard}
+
+% --- Cross-references. Loaded last, as hyperref prefers to be. ---
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks = true,
+  linkcolor  = black,      % internal links: black for a printed draft
+  citecolor  = black,
+  urlcolor   = blue,
+  pdftitle   = {\PaperTitle},
+  pdfauthor  = {\PaperAuthor},
+}
+
+
+% =====================================================================
+%  APPLY SETTINGS
+% =====================================================================
+\setstretch{\LineSpacing}
+
+% Page numbers bottom-right, no rules, no header text.
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Paragraphs: indented, no extra vertical gap (standard for prose).
+% For block paragraphs instead, set parindent to 0pt and parskip to ~1em.
+\setlength{\parindent}{0.5in}
+\setlength{\parskip}{0pt}
+
+
+% =====================================================================
+%  THEOREM ENVIRONMENTS
+% =====================================================================
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{prop}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{example}{Example}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+
+% =====================================================================
+%  DOCUMENT
+% =====================================================================
+\begin{document}
+
+% --- Title page (no page number) ---
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\huge \PaperTitle \par}
+    \vspace{1cm}
+    {\large \PaperSubtitle \par}
+    \vspace{8cm}
+    {\large \PaperAuthor \par}
+    \vspace{.2cm}
+    {\large University of Chicago \par}
+    \vspace{.2cm}
+    {\large Department of Political Science \par}
+    \vspace{1cm}
+    {\large \PaperDate \par}
+    \vfill
+\end{titlepage}
+
+% Body starts here; page numbering restarts at 1.
+\newpage
+\setcounter{page}{1}
+
+
+% ---------------------------------------------------------------------
+%  DAY 1 RESPONSE — write below.
+% ---------------------------------------------------------------------
+
+
+
+
+% =====================================================================
+%  REFERENCES
+%  Draws on ../refs.bib (the shared bibliography at the repo root).
+%  Uncomment \nocite{*} to print every entry in refs.bib regardless of
+%  whether it is cited — useful for checking the file, not for a draft.
+% =====================================================================
+\newpage
+% \nocite{*}
+\bibliography{../refs}
+
+\end{document}
