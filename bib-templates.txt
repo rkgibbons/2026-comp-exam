@@ -1,0 +1,84 @@
+==========================================================================
+ BIBTEX ENTRY TEMPLATES — 2026 Comp Exam
+ Copy one of these into refs.bib, fill it in, delete fields you don't have.
+
+ Why this lives in its own .txt file: BibTeX does not treat % as a comment.
+ It scans for @, so a "commented-out" @article{...} sitting inside a .bib
+ file is still parsed as a real entry and errors out the whole bibliography.
+ Keeping the templates outside refs.bib makes that impossible.
+
+ The key on the first line is yours to invent — it only has to be unique
+ across refs.bib and zotero.bib. House style is surname + year:
+ putnam1993, hubershipan2002, przeworskietal2000.
+==========================================================================
+
+
+--- JOURNAL ARTICLE ------------------------------------------------------
+
+@article{surnameYEAR,
+  author  = {Last, First and Last, First},
+  title   = {Article Title},
+  journal = {American Political Science Review},
+  volume  = {120},
+  number  = {2},
+  pages   = {215--240},
+  year    = {2026}
+}
+
+
+--- BOOK -----------------------------------------------------------------
+
+@book{surnameYEAR,
+  author    = {Last, First},
+  title     = {Book Title},
+  address   = {Princeton},
+  publisher = {Princeton University Press},
+  year      = {2026}
+}
+
+
+--- CHAPTER IN AN EDITED VOLUME ------------------------------------------
+
+@incollection{surnameYEAR,
+  author    = {Last, First},
+  title     = {Chapter Title},
+  booktitle = {Title of the Volume},
+  editor    = {Last, First and Last, First},
+  address   = {Chicago},
+  publisher = {University of Chicago Press},
+  pages     = {46--65},
+  year      = {2026}
+}
+
+
+--- WORKING PAPER / ANYTHING ELSE ----------------------------------------
+
+@misc{surnameYEAR,
+  author = {Last, First},
+  title  = {Title},
+  note   = {Working paper},
+  year   = {2026}
+}
+
+
+==========================================================================
+ GOTCHAS
+==========================================================================
+
+ * A literal ampersand must be written \&  (a bare & breaks the entry).
+   Same for % and $ and #, all of which need a backslash.
+
+ * Institution as author: brace it, or BibTeX reads the commas as a
+   "Last, First" split and aborts —
+       author = {{Ireland Department of Communications, Climate Action}}
+
+ * No author: omit the field entirely. Do not leave author = {}.
+
+ * Every field needs its closing brace and a comma after it (the last
+   field before the closing } needs no comma, but one is harmless).
+
+ * Page ranges use two hyphens: 215--240
+
+ * After adding a citation you need a full build cycle before it shows up:
+       latexmk -pdf "Day 1 Gibbons.tex"
+   A single pdflatex pass will leave a bold (?) in the text instead.
