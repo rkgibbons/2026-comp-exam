@@ -89,6 +89,8 @@
 \usepackage{caption}
 \usepackage{wrapfig}
 \usepackage{rotating}
+\usepackage{parskip}
+
 
 % --- Tables ---
 \usepackage{booktabs}       % \toprule \midrule \bottomrule
@@ -137,7 +139,7 @@
 % Paragraphs: indented, no extra vertical gap (standard for prose).
 % For block paragraphs instead, set parindent to 0pt and parskip to ~1em.
 \setlength{\parindent}{0.5in}
-\setlength{\parskip}{0pt}
+\setlength{\parskip}{-2em}
 
 
 % =====================================================================
@@ -208,7 +210,18 @@ In discussing and evaluating these arguments, I do not intend to provide a defin
 
 \section*{An Economic Explanation} 
 
+One of the field's driving discussions of political evolution is the role of economic structures and factors. Scholars of this framework broadly posit that the development of contemporary regime types (and the political institutions within them) are a result of the historical amount, distribution, and nature of capital. Yet, the exact ways in which these economic contexts affect long-term political outcomes are quite varied within the literature. \\
 
+I organize this section into three subsections based on the role of the respective socioeconomic classes: the elites, the middle class, and the poor. As with this response in its entirety, these explanations are not mutually exclusive: an argument for the role of the wealthy does not inherently negate\footnote{On occassion, some do; I discuss this as appropriate.} the role of the poor. In fact, as we shall see, many of these factors are both complementary and reinforcing. 
+
+
+\subsection*{The Elites: A Power-Sharing Balance} 
+
+The evolving role of the elites in political development is, to say the least, curious. Historical social orderings generally included an exclusive elite with much greater influence in social, political, and economic affairs than their middle-or-lower-class counterparts. Yet, liberal democracy invokes norms of ``representativeness, accountability, equality, and participation'' \cite{lijphart1991}, inherently opposed to the existence of a disproportionately-influential class. This suggests that an ultimate transition to liberal democracy must involve a transition away from this influence; likewise, an inability to facilitate this transition will likely result in some alternative outcome. The central puzzle in democratic development, as \cite{ziblatt2017} puts it, is what might have resulted in this relinquishing of influence, including whether it happened peacefully or through violence. \\
+
+Let us first consider the seminal work of Barrington Moore, whose \citeyear{moore1966} ``Social Origins of Dictatorship and Democracy'' explores (among other topics) the role of the elites in differentiating between democratic, fascist, and communist outcomes. Moore delineates between two general arrangements of the aristocracy: a dependence on the state, or a dependence on the market. If the aristocracy's wealth was primarily derived from the state -- be that sharing in its political rents, employment or appointment to prestigious posts, or similar dependencies -- the state would accordingly possess an excess of influence over this class, frequently leading to royal absolutism. This, in turn, largely prevented any transition to even infantile democracy: either the state was powerful enough to retain its absolute authority, or the elites would be empowered to revolt and establish an extractive regime framed by \cite{boix2003} as ``right-wing authoritarianism.'' Conversely, as Moore posits, a power-sharing equilibrium between the crown and the elites was an early prerequisite for democracy and could facilitate both the peaceful coexistence of the regime and the elites, as well as a peaceful graduation of influence to these aristocrats. \\
+
+Of course, it is important to consider not just the conditions leading to the enfranchisement of the elite, but also the instigating factors which facilitated this development. A common answer is simply informational -- that the elites possess privileged information which the state does not. \cite{ahmedstasavage2020} discuss the emergence of council governance -- the first movements away from total executive authority -- as a reflection of informational asymmetry whereby the elites could extract revenue from the land (and the people) much more efficiently than the state. Indeed, they find support for this hypothesis as it pertains to agricultural production, whereby councils were historically more likely to emerge in societies with significant variability in caloric production.
 
 
 
@@ -229,6 +242,8 @@ In discussing and evaluating these arguments, I do not intend to provide a defin
 % \nocite{*}
 
 % UNCOMMENT OUT ONCE STARTED
+\setlength{\parskip}{0em}
+
 \bibliography{../refs,../zotero}
 
 \end{document}
